@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maciej Sztachera</title>
+  <meta name="description" content="Maciej Sztachera, PhD candidate in Economics at Goethe University Frankfurt (GSEFM), on the 2026/2027 academic job market. Research in macroeconomics: how microeconomic heterogeneity shapes macroeconomic outcomes.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Global reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: #ffffff;
+  }
+
+  /* --- MAIN CONTAINER --- */
+  .main-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px 12px 24px 12px;
+    overflow-wrap: break-word;
+  }
+
+  /* --- 2-COLUMN LAYOUT GRID --- */
+  .two-column-grid {
+    display: grid;
+    grid-template-columns: 1.85fr 1fr;
+    gap: 32px;
+    align-items: start;
+    width: 100%;
+  }
+
+  /* --- INTRO / HEADER STYLES --- */
+  .user-name {
+    font-size: 24pt;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+  }
+
+  .intro-paragraph {
+    font-size: 12pt;
+    color: #000000;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+  }
+
+  .intro-paragraph:last-of-type {
+    margin-bottom: 28px;
+  }
+
+  .job-market-text {
+    font-weight: bold;
+  }
+
+  .cv-link {
+    color: #0b5394;
+    text-decoration: underline;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  /* Base Section Header */
+  .header-title {
+    font-size: 18pt;
+    color: #434343;
+    font-weight: bold;
+    margin: 0 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid lightgrey;
+    line-height: 1.2;
+  }
+
+  .header-title.secondary {
+    margin-top: 28px;
+  }
+
+  /* JMP SECTION HEADER HIGHLIGHT */
+  .header-title.jmp-header {
+    color: #0b5394;
+    border-bottom: 1.5px solid #0b5394;
+  }
+
+  .paper-entry {
+    margin-bottom: 14px;
+  }
+
+  /* TEACHING ENTRIES */
+  .teaching-entry {
+    margin-bottom: 14px;
+    padding-left: 0;
+  }
+
+  /* FEATURED CARD (JMP) */
+  .paper-entry.featured {
+    background-color: #f4f8fb;
+    border-left: 4px solid #0b5394;
+    padding: 12px 14px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* SECONDARY CARD (WIP) */
+  .paper-entry.wip-card {
+    background-color: #f8f9fa;
+    border-left: 4px solid #cbd5e1;
+    padding: 12px 14px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .paper-title {
+    font-size: 13.5pt;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .course-title {
+    font-size: 12pt !important;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .paper-links, .paper-author, .teaching-details, .sidebar-content {
+    font-size: 11pt;
+    color: #000000;
+    line-height: 1.55;
+  }
+
+  .paper-author {
+    font-weight: normal;
+    margin-left: 6px;
+  }
+
+  .paper-links a, .abstract-btn, .paper-author a, .teaching-details a, .sidebar-content a {
+    color: #0b5394;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Collapsible Abstract Box */
+  .abstract-box {
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    padding: 12px 15px;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: #222222;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ABSTRACT BOX COLOR MATCHING MAIN BLOCKS */
+  .paper-entry.featured .abstract-box {
+    background-color: #f4f8fb;
+    border: 1px solid #d0e1f0;
+    border-left: 3px solid #0b5394;
+  }
+
+  .paper-entry.wip-card .abstract-box {
+    background-color: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #cbd5e1;
+  }
+
+  /* --- PROFILE PHOTO & SIDEBAR --- */
+  .profile-photo {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .sidebar-section {
+    margin-bottom: 24px;
+  }
+
+  /* END OF WEBSITE DIVIDER LINE */
+  .site-footer-divider {
+    margin-top: 28px;
+    margin-bottom: 0;
+    border: none;
+    border-top: 1px solid lightgrey;
+    width: 100%;
+  }
+
+  /* --- MOBILE --- */
+  @media (max-width: 768px) {
+    .main-container {
+      padding: 10px 12px 20px 12px;
+    }
+
+    .two-column-grid {
+      display: block;
+    }
+
+    .user-name {
+      text-align: left;
+      font-size: 21pt;
+      margin-bottom: 16px;
+    }
+
+    .intro-paragraph {
+      font-size: 11.5pt;
+      margin-bottom: 8px;
+    }
+
+    .intro-paragraph:last-of-type {
+      margin-bottom: 18px;
+    }
+
+    .header-title {
+      font-size: 15.5pt;
+      margin-bottom: 10px;
+    }
+
+    .header-title.secondary {
+      margin-top: 20px;
+    }
+
+    .profile-photo {
+      max-width: 240px;
+      margin: 0 0 20px 0;
+    }
+
+    .sidebar-section {
+      margin-bottom: 18px;
+    }
+
+    .paper-author {
+      display: block;
+      margin-left: 0;
+      margin-top: 2px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="main-container">
+  <div class="two-column-grid">
+
+    <!-- ================= LEFT COLUMN ================= -->
+    <div class="left-column">
+
+      <!-- INTRO HEADER -->
+      <h1 class="user-name">Maciej Sztachera</h1>
+
+      <p class="intro-paragraph">Thank you for visiting my website!</p>
+      <p class="intro-paragraph">I am a PhD candidate in Economics at Goethe University Frankfurt (GSEFM).</p>
+      <p class="intro-paragraph job-market-text">I am on the 2026/2027 academic job market.</p>
+      <p class="intro-paragraph">My research lies in macroeconomics, and I am interested in how microeconomic heterogeneity shapes macroeconomic outcomes.</p>
+      <p class="intro-paragraph">You can find my <strong>CV</strong> <a href="https://drive.google.com/file/d/1sbhn0LwctY8tawuq2t0ulN1gImoYjmEr/view?usp=sharing" target="_blank" class="cv-link">here</a>.</p>
+
+      <!-- SECTION 1: Job Market Paper -->
+      <h3 class="header-title jmp-header">Job Market Paper</h3>
+
+      <div class="paper-entry featured">
+        <div class="paper-title">Hours, Wages, and Multipliers</div>
+        <div class="paper-links">
+          <span class="abstract-btn" onclick="toggleAbstract('abstractBoxJmp')">Abstract</span>,
+          [<a href="https://drive.google.com/file/d/17vX8EO2GHfYA9auYV6uDySHANYGbJSRp/view?usp=drive_link" target="_blank">JMP version</a>, <b style="color: #000000;">2026</b>],
+          [<a href="https://mpra.ub.uni-muenchen.de/121556/1/MPRA_paper_121556.pdf" target="_blank">MPRA Paper 121556</a>, <b style="color: #000000;">2024</b>]
+        </div>
+
+        <div id="abstractBoxJmp" class="abstract-box">
+          Sticky-price heterogeneous-agent New Keynesian (HANK) models struggle to simultaneously match the empirical magnitudes of (i) the average consumption response to unanticipated wealth shocks (MPC), (ii) the average short-run labor earnings response to these shocks (MPE), and (iii) the aggregate output response to government spending shocks—the Auclert–Bardóczy–Rognlie HANK trilemma.
+The tension arises because matching the MPE requires preferences that reduce the wealth effect on labor supply and thereby inflate fiscal multipliers. The canonical sticky-wage solution to the trilemma assumes uniform hours, which arise when workers' hours are perfect complements. However, existing empirical evidence shows that hours are gross but imperfect complements.
+Thus, I introduce imperfect complementarity between hours into the labor aggregation of otherwise standard sticky-price and sticky-wage HANK models. Hours complementarities in the range of micro estimates close half to three-quarters of the gap between the baseline MPE and the data. Because they reduce the labor supply responses to idiosyncratic but not to aggregate shocks, they do so without inflating fiscal multipliers.
+        </div>
+      </div>
+
+      <!-- SECTION 2: Work in Progress -->
+      <h3 class="header-title secondary">Work in progress</h3>
+
+      <div class="paper-entry wip-card">
+        <div class="paper-title">
+          Attention to Interest Rates and Wealth Inequality
+          <span class="paper-author">with <a href="https://sites.google.com/site/georgduernecker/home" target="_blank">Georg Dürnecker</a></span>
+        </div>
+        <div class="paper-links" style="margin-top: 2px;">
+          <span class="abstract-btn" onclick="toggleAbstract('abstractBoxWip')">Abstract</span>
+        </div>
+
+        <div id="abstractBoxWip" class="abstract-box">
+          We investigate how households' attention to interest rates varies with wealth and study its implications for wealth inequality.
+Using a representative panel of German households, we document a robust and pronounced wealth gradient in interest rate forecast accuracy, with low-wealth households making substantially less accurate forecasts.
+We provide evidence that the wealth gradient in forecast accuracy reflects differences in attention to interest rates across households.
+Moreover, we conduct an RCT in which we provide households with information about the average interest rate on deposit accounts in Germany and show that wealthier households revise their expectations less in response to the information, consistent with a higher degree of attention.
+We build a quantitative life-cycle model with endogenous attention to interest rates to study how heterogeneity in attention affects wealth accumulation and aggregate inequality.
+        </div>
+      </div>
+
+      <!-- SECTION 3: Teaching -->
+      <h3 class="header-title secondary">Teaching</h3>
+
+      <div class="teaching-entry">
+        <div class="teaching-details">
+          <span class="course-title">Computational Economics (Master's)</span>, TA,
+          <a href="https://qis.server.uni-frankfurt.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=394195&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung" target="_blank">Summer 2025</a> and
+          <a href="https://qis.server.uni-frankfurt.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=416624&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung" target="_blank">Summer 2026</a>
+        </div>
+      </div>
+
+      <div class="teaching-entry">
+        <div class="teaching-details">
+          <span class="course-title">Quantitative Macroeconomics and Numerical Methods (PhD)</span>, TA,
+          <a href="https://qis.server.uni-frankfurt.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=404662&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung" target="_blank">Winter 2025</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= RIGHT COLUMN (SIDEBAR) ================= -->
+    <div class="right-column">
+      <!-- Profile Picture -->
+      <img src="https://lh3.googleusercontent.com/d/1K-r0fCebODkmP3STvOPROWLBtDwVZWmY" alt="Maciej Sztachera" class="profile-photo">
+
+      <!-- Contact Section -->
+      <div class="sidebar-section">
+        <h3 class="header-title">Contact</h3>
+        <div class="sidebar-content">
+          sztachera [at] econ [dot] uni [minus] frankfurt [dot] de
+        </div>
+      </div>
+
+      <!-- Office Address Section -->
+      <div class="sidebar-section">
+        <h3 class="header-title">Office address</h3>
+        <div class="sidebar-content">
+          Goethe University Frankfurt<br>
+          RuW, Room 4.255<br>
+          Theodor-W.-Adorno-Platz 4<br>
+          D-60323 Frankfurt am Main<br>
+          Germany
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- End of 2-Column Grid -->
+
+  <hr class="site-footer-divider">
+</div>
+
+<script>
+  function toggleAbstract(id) {
+    var box = document.getElementById(id);
+    if (box) {
+      if (box.style.display === "none" || box.style.display === "") {
+        box.style.display = "block";
+      } else {
+        box.style.display = "none";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
